@@ -2,7 +2,12 @@ import gql from "graphql-tag";
 
 export const typeDefs = gql`
   type Query {
-    localities(q: String!, state: String!): [Locality]!
+    localities(postcode: String!, suburb: String!, state: String!): LocalityResult!
+  }
+
+  type LocalityResult {
+    message: String!
+    items: [Locality]!
   }
 
   type Locality {
