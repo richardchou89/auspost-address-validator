@@ -1,14 +1,8 @@
 import { LocalityAPI } from "@/datasources/locality-api";
-import { ApolloServer } from "@apollo/server";
+import { createApolloServer } from "@/server";
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
-import gql from "graphql-tag";
-import { typeDefs } from "@/schema";
-import { resolvers } from "@/resolvers";
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-});
+const server = createApolloServer();
 
 const handler = startServerAndCreateNextHandler(server, {
   context: async () => {

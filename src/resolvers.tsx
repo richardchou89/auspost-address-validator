@@ -1,4 +1,7 @@
-export const resolvers = {
+import { Resolvers } from "./types";
+import { LocalitiesModel } from "./models/localities";
+
+export const resolvers: Resolvers  = {
   Query: {
     localities: async (_, { postcode, suburb, state }, { dataSources }) => {
       const results = await dataSources.localityAPI.getLocalities(`${suburb} ${postcode}`);

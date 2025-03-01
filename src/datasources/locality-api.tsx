@@ -1,4 +1,5 @@
 import { AugmentedRequest, RESTDataSource } from "@apollo/datasource-rest";
+import { LocalitiesModel } from "@/models/localities";
 
 export class LocalityAPI extends RESTDataSource {
   baseURL = "https://gavg8gilmf.execute-api.ap-southeast-2.amazonaws.com/";
@@ -8,7 +9,7 @@ export class LocalityAPI extends RESTDataSource {
   }
 
   async getLocalities(q: string) {
-    return this.get('staging/postcode/search.json', {
+    return this.get<LocalitiesModel>('staging/postcode/search.json', {
       params: { q }
     })
   }
