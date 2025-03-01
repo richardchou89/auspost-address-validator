@@ -11,13 +11,15 @@
     "generate": "graphql-codegen"
   },
   "dependencies": {
+    "@apollo/client": "^3.13.1",
     "@apollo/datasource-rest": "^6.4.1",
     "@apollo/server": "^4.11.3",
     "@as-integrations/next": "^3.2.0",
     "graphql-tag": "^2.12.6",
     "next": "15.2.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@babel/core": "^7.26.9",
