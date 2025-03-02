@@ -50,6 +50,23 @@ The REST endpoint returns errors intermittently:
 ```
 This is properly handled in UI. UI will display `an unexpected error occurred`.
 
+# Form validation
+
+Form validation is done client-side and server-side, by `zod`.
+
+To test server-side validation, uncomment
+
+```
+/*
+const rawData: AddressFormType = {
+  postcode: "",
+  suburb: "",
+  state: "",
+}
+*/
+```
+and `const validatedData = addressFormSchema.safeParse(rawData);`.
+
 # Design
 
 This project was styled by using Tailwindcss, and is responsive.
