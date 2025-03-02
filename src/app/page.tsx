@@ -8,7 +8,7 @@ import { submitAddress } from "@/actions/address";
 const stateOptions = ["NSW", "VIC", "QLD", "WA", "SA", "TAS", "ACT", "NT"]; 
 
 export default function Home() {
-  //const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
 
   const [formData, setFormData] = useState<AddressFormType>({
@@ -34,8 +34,10 @@ export default function Home() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const newErrors = validateForm(formData);
+    setMessage("");
     setErrors(newErrors);
     if (Object.keys(newErrors).length === 0) {
+      setIsSubmitting(true);
       startTransition(async () => {
         try {
           const result = await submitAddress(formData)
@@ -45,8 +47,10 @@ export default function Home() {
             if (result.errors) setErrors(result.errors as AddressFormErrors);
             setMessage(result.message);
           }
+          setIsSubmitting(false);
         } catch {
           setMessage("An unexpected error occurred");
+          setIsSubmitting(false);
         }
       });
     }
@@ -114,7 +118,7 @@ export default function Home() {
           <div className="mt-4 text-green-500">{ message }</div>
         }
         <div className="text-center mt-4">
-          <button className="bg-black text-white w-full rounded-md h-10" type="submit">Submit</button>
+          <button className="bg-black text-white w-full rounded-md h-10" type="submit">{ isSubmitting ? "Querying" : "Submit" }</button>
         </div>
       </form>
     </div>
