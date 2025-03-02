@@ -117,3 +117,12 @@ npm run test
 ```
 
 ![image](https://github.com/user-attachments/assets/1b50fa05-bc52-43a9-8f45-f400356314ca)
+
+# Env vars
+
+`.env.development` and `.env.test` for development and test environments.
+
+```
+API_TOKEN=
+GRAPHQL_URL=http://localhost:3000/api/graphql
+```
