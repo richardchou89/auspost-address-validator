@@ -1,3 +1,5 @@
+If you can't run this on local, please email richardchou89 (at) hotmail.com
+
 **IMPORTANT**
 
 To run this app locally, add `.env` to root directory, with below env vars:
