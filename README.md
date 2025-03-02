@@ -2,6 +2,11 @@ This project has been deployed to Vercel. Test it [here](https://lawpath-konami9
 
 It can also be started from local.
 
+# Requirements
+
+1. Latest Nextjs (15.2.0)
+2. Nodejs 20 or above
+
 # Local installation
 
 **IMPORTANT**
@@ -14,9 +19,8 @@ API_TOKEN=
 GRAPHQL_URL=http://localhost:3000/api/graphql
 ```
 Then,
-1. Clone into your local
-2. `npm install`
-3. `npm run dev`
+1. `npm install`
+2. `npm run dev`
 
 The app should start running on port 3000.
 
