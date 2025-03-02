@@ -65,52 +65,60 @@ export default function Home() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="form-row">
-        <input
-          type="text"
-          name="suburb"
-          value={formData.suburb}
-          onChange={handleChange}
-          placeholder="Suburb"
-        />
-        {errors.suburb && <span>{errors.suburb[0]}</span>}
-      </div>
-      <div className="form-row">
-        <input
-          type="text"
-          name="postcode"
-          value={formData.postcode}
-          onChange={handleChange}
-          placeholder="Postcode"
-        />
-        {errors.postcode && <span>{errors.postcode[0]}</span>}
-      </div>
-      <div className="form-row">
-        <select
-          name="state"
-          className="form-field"
-          value={formData.state}
-          onChange={handleChange}
-        >
-          <option value="">Select state</option>
-          {stateOptions.map((state) => (
-            <option key={state} value={state}>
-              {state}
-            </option>
-          ))}
-        </select>
-        {errors.state && errors.state.length > 0 && (
-          <div className="form-msg">{errors.state[0]}</div>
-        )}
-      </div>
-      {
-        message &&
-        <div>{ message }</div>
-      }
-      <div>
-        <button type="submit">Submit</button>
-      </div>
-    </form>
+    <div className="border-2 border-gray-300 rounded-xl lg:w-1/3 w-full p-4">
+      <h1 className="text-2xl font-bold">Address Information</h1>
+      <h3 className="mt-2">Enter your location details below.</h3>
+      <form onSubmit={handleSubmit} className="mt-4">
+        <div className="form-row lg:w-1/2 w-full pr-0 lg:pr-2">
+          <input
+            type="text"
+            name="suburb"
+            value={formData.suburb}
+            onChange={handleChange}
+            placeholder="Enter your suburb"
+            className="border-2 border-gray-300 rounded-md w-full h-10 p-2"
+          />
+          {errors.suburb && <span className="text-red-500">{errors.suburb[0]}</span>}
+        </div>
+        <div className="flex lg:flex-row flex-col mt-4">
+          <div className="form-row lg:w-1/2 w-full lg:pr-2">
+            <input
+              type="text"
+              name="postcode"
+              value={formData.postcode}
+              onChange={handleChange}
+              placeholder="e.g. 3000"
+              className="border-2 border-gray-300 rounded-md w-full h-10 p-2"
+            />
+            {errors.postcode && <span className="text-red-500">{errors.postcode[0]}</span>}
+          </div>
+          <div className="form-row lg:pl-2 lg:w-1/2 w-full w-1/2 lg:mt-0 mt-4">
+            <select
+              name="state"
+              value={formData.state}
+              onChange={handleChange}
+              className="form-field border-2 border-gray-300 rounded-md w-full h-10 p-2"
+            >
+              <option value="">Select state</option>
+              {stateOptions.map((state) => (
+                <option key={state} value={state}>
+                  {state}
+                </option>
+              ))}
+            </select>
+            {errors.state && errors.state.length > 0 && (
+              <div className="text-red-500">{errors.state[0]}</div>
+            )}
+          </div>
+        </div>
+        {
+          message &&
+          <div className="mt-4 text-green-500">{ message }</div>
+        }
+        <div className="text-center mt-4">
+          <button className="bg-black text-white w-full rounded-md h-10" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
   )
 }
