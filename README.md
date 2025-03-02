@@ -12,6 +12,15 @@ The app should start running on port 3000.
 
 ![image](https://github.com/user-attachments/assets/39982ab0-5294-4656-8df1-2a3de187d7cf)
 
+Frontend (http://localhost:3000/):
+
+![image](https://github.com/user-attachments/assets/d429272e-258b-45cc-801f-c6b14ec3ef7e)
+
+GraphQL server (http://localhost:3000/api/graphql)
+
+![image](https://github.com/user-attachments/assets/c7b5ee3a-aeb9-498a-b1ff-b9a6f6c4ae8c)
+
+
 # Basic structure
 
 ![image](https://github.com/user-attachments/assets/ed633131-5f51-4a01-b9c5-0d023973c7d7)
