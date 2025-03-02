@@ -69,7 +69,7 @@ export default function Home() {
       <h1 className="text-2xl font-bold">Address Information</h1>
       <h3 className="mt-2">Enter your location details below.</h3>
       <form onSubmit={handleSubmit} className="mt-4">
-        <div className="form-row lg:w-1/2 w-full pr-0 lg:pr-2">
+        <div className="form-row w-full pr-0">
           <input
             type="text"
             name="suburb"
@@ -99,9 +99,9 @@ export default function Home() {
               onChange={handleChange}
               className="form-field border-2 border-gray-300 rounded-md w-full h-10 p-2"
             >
-              <option value="">Select state</option>
+              <option className="text-gray-500" value="">Select state</option>
               {stateOptions.map((state) => (
-                <option key={state} value={state}>
+                <option className="text-black" key={state} value={state}>
                   {state}
                 </option>
               ))}
