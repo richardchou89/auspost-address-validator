@@ -20,6 +20,24 @@ GraphQL server (http://localhost:3000/api/graphql)
 
 ![image](https://github.com/user-attachments/assets/c7b5ee3a-aeb9-498a-b1ff-b9a6f6c4ae8c)
 
+An example query:
+
+```
+query  {
+  localities(postcode: "2000", suburb: "Sydney south", state: "NSW") {
+    message
+    items {
+      id
+      postcode
+      location
+      latitude
+      longitude
+      state
+      category
+    }
+  }
+}
+```
 
 # Basic structure
 
