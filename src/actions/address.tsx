@@ -25,7 +25,7 @@ export async function submitAddress(formData: AddressFormType) {
     }
 
     const client = new ApolloClient({
-      uri: "http://localhost:3000/api/graphql",
+      uri: process.env.GRAPHQL_URL,
       cache: new InMemoryCache(),
     });
     
