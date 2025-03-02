@@ -20,8 +20,9 @@ It can also be started from local.
 # Local installation
 
 1. Clone into your local
-1. `npm install`
-2. `npm run dev`
+2. Add `.env` to root dir
+3. `npm install`
+4. `npm run dev`
 
 The app should start running on port 3000.
 
