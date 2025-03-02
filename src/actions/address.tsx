@@ -60,7 +60,8 @@ export async function submitAddress(formData: AddressFormType) {
       success: true,
       message: response.data.localities.message,
     }
-  } catch {
+  } catch(error) {
+    console.log(`error 1`, error);
     return {
       success: false,
       message: 'An unexpected error occurred',

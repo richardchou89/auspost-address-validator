@@ -47,7 +47,8 @@ export default function Home() {
             if (result.errors) setErrors(result.errors as AddressFormErrors);
             setMessage(result.message);
           }
-        } catch {
+        } catch(error) {
+          console.log(`error 2`, error);
           setMessage("An unexpected error occurred");
         }
       });
