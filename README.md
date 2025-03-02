@@ -38,6 +38,18 @@ REST endpoint: AusPost API.
 
 5. GraphQL is returned to UI for display.
 
+# Video walkthrough
+
+https://github.com/user-attachments/assets/1e4ab181-f9b5-45c2-8f1d-209ddbe80096
+
+The REST endpoint returns errors intermittently:
+```
+{
+    "error": "Internal Server Error"
+}
+```
+This is properly handled in UI. UI will display `an unexpected error occurred`.
+
 # Design
 
 This project was styled by using Tailwindcss, and is responsive.
