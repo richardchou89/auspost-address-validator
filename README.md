@@ -79,6 +79,14 @@ REST endpoint: AusPost API.
 
 5. GraphQL is returned to UI for display.
 
+# How search is done
+
+If we pass all parameters (postcode, suburb, state) to AusPost API, we can't tell whether postcode and suburb mismatch, or suburb and state mismatch.
+
+My approach is to only pass postcode and suburb to AusPost API. If response if empty, we know postcode and suburb mismatch.
+
+Then do filtering of state (NSW, VIC, TAS...etc) in resolver. If result is empty, we know suburb and state mismatch.
+
 # Video walkthrough
 
 https://github.com/user-attachments/assets/1e4ab181-f9b5-45c2-8f1d-209ddbe80096
