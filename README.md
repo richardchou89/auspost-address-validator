@@ -78,3 +78,15 @@ Mobile view:
 Desktop view:
 
 ![image](https://github.com/user-attachments/assets/79554e2c-7966-4019-92a3-92063e51373a)
+
+# Tests
+
+E2E tests and UI tests are written to ensure the app behave as expected. Libraries used: `jest` and `react-testing-library`.
+
+To run test:
+
+```
+npm run test
+```
+
+![image](https://github.com/user-attachments/assets/1b50fa05-bc52-43a9-8f45-f400356314ca)
