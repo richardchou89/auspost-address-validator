@@ -34,21 +34,18 @@ export default function Home() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const newErrors = validateForm(formData);
-    console.log(`newErrors`, newErrors)
     setErrors(newErrors);
     if (Object.keys(newErrors).length === 0) {
       startTransition(async () => {
         try {
           const result = await submitAddress(formData)
-          console.log("Form submitted result:", result);
           if (result.success) {
             setMessage(result.message);
           } else {
             if (result.errors) setErrors(result.errors as AddressFormErrors);
             setMessage(result.message);
           }
-        } catch(error) {
-          console.log(`error 2`, error);
+        } catch {
           setMessage("An unexpected error occurred");
         }
       });

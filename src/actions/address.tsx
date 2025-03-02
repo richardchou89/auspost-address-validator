@@ -4,8 +4,6 @@ import { AddressFormType, addressFormSchema } from "@/lib/address-form-schema";
 import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
 
 export async function submitAddress(formData: AddressFormType) {
-  console.log(`formData`, formData);
-
   try {
     /*
     const rawData: AddressFormType = {
@@ -60,8 +58,7 @@ export async function submitAddress(formData: AddressFormType) {
       success: true,
       message: response.data.localities.message,
     }
-  } catch(error) {
-    console.log(`error 1`, error);
+  } catch {
     return {
       success: false,
       message: 'An unexpected error occurred',
