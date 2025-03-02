@@ -28,7 +28,15 @@ REST endpoint: AusPost API.
 
 ![image](https://github.com/user-attachments/assets/ee063a98-d89d-4455-8032-69462fe22d9e)
 
+1. When user enters postcode, suburb and state and clicks submit, the form will be validated client-side and then posted to server component (`submitAddress`).
 
+2. Server component (`submitAddress`) will validate form server-side, and then use Apollo client to call GraphQL server.
+
+3. GraphQL server will call REST API through proxy (`LocalityAPI`)
+
+4. REST API returns localities, and the proxy converts localities to GraphQL.
+
+5. GraphQL is returned to UI for display.
 
 # Design
 
