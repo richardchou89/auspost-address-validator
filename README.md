@@ -1,3 +1,13 @@
+**IMPORTANT**
+
+To run this app locally, add `.env` to root directory, with below env vars:
+
+```
+// AusPost bearer token
+API_TOKEN=     
+GRAPHQL_URL=http://localhost:3000/api/graphql
+```
+
 This project has been deployed to Vercel. Test it [here](https://lawpath-konami99s-projects.vercel.app/).
 
 It can also be started from local.
@@ -9,16 +19,7 @@ It can also be started from local.
 
 # Local installation
 
-**IMPORTANT**
-
-To run this app locally, add `.env` to root directory, with below env vars:
-
-```
-// AusPost bearer token
-API_TOKEN=     
-GRAPHQL_URL=http://localhost:3000/api/graphql
-```
-Then,
+1. Clone into your local
 1. `npm install`
 2. `npm run dev`
 
