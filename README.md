@@ -83,7 +83,7 @@ REST endpoint: AusPost API.
 
 If we pass all parameters (postcode, suburb, state) to AusPost API, we can't tell whether postcode and suburb mismatch, or suburb and state mismatch.
 
-My approach is to only pass postcode and suburb to AusPost API. If response if empty, we know postcode and suburb mismatch.
+My approach is to only pass postcode and suburb to the API. If response if empty, we know postcode and suburb mismatch.
 
 Then do filtering of state (NSW, VIC, TAS...etc) in resolver. If result is empty, we know suburb and state mismatch.
 
@@ -91,13 +91,15 @@ Then do filtering of state (NSW, VIC, TAS...etc) in resolver. If result is empty
 
 https://github.com/user-attachments/assets/1e4ab181-f9b5-45c2-8f1d-209ddbe80096
 
+### REST API intermittent failure
+
 The REST endpoint returns errors intermittently:
 ```
 {
     "error": "Internal Server Error"
 }
 ```
-This is properly handled in UI. UI will display `an unexpected error occurred`.
+This is properly handled in the code. UI will display `an unexpected error occurred`.
 
 # Form validation
 
