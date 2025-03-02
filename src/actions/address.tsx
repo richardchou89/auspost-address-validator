@@ -1,8 +1,7 @@
 'use server'
 
-import { z } from 'zod'
-import { AddressFormType, AddressFormErrors, addressFormSchema } from "@/lib/address-form-schema";
-import { ApolloClient, gql, InMemoryCache, useQuery } from "@apollo/client";
+import { AddressFormType, addressFormSchema } from "@/lib/address-form-schema";
+import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
 
 export async function submitAddress(formData: AddressFormType) {
   console.log(`formData`, formData);
@@ -61,7 +60,7 @@ export async function submitAddress(formData: AddressFormType) {
       success: true,
       message: response.data.localities.message,
     }
-  } catch (error) {
+  } catch {
     return {
       success: false,
       message: 'An unexpected error occurred',

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { GraphQLResolveInfo } from 'graphql';
 import { DataSourceContext } from './context';
 export type Maybe<T> = T | null;
@@ -7,7 +9,6 @@ export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: 
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
-export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -122,8 +123,8 @@ export type ResolversTypes = {
   Float: ResolverTypeWrapper<Scalars['Float']['output']>;
   ID: ResolverTypeWrapper<Scalars['ID']['output']>;
   Int: ResolverTypeWrapper<Scalars['Int']['output']>;
-  Locality: ResolverTypeWrapper<./models/locality>;
-  LocalityResult: ResolverTypeWrapper<Omit<LocalityResult, 'items'> & { items: Array<Maybe<ResolversTypes['Locality']>> }>;
+  Locality: ResolverTypeWrapper<Locality>;
+  LocalityResult: ResolverTypeWrapper<LocalityResult>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']['output']>;
 };
@@ -134,8 +135,8 @@ export type ResolversParentTypes = {
   Float: Scalars['Float']['output'];
   ID: Scalars['ID']['output'];
   Int: Scalars['Int']['output'];
-  Locality: ./models/locality;
-  LocalityResult: Omit<LocalityResult, 'items'> & { items: Array<Maybe<ResolversParentTypes['Locality']>> };
+  Locality: Locality;
+  LocalityResult: LocalityResult;
   Query: {};
   String: Scalars['String']['output'];
 };
@@ -167,3 +168,4 @@ export type Resolvers<ContextType = DataSourceContext> = {
   Query?: QueryResolvers<ContextType>;
 };
 
+/* eslint-enable */

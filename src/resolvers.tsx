@@ -1,5 +1,4 @@
 import { Resolvers } from "./types";
-import { LocalitiesModel } from "./models/localities";
 
 export const resolvers: Resolvers  = {
   Query: {

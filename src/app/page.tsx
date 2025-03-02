@@ -8,7 +8,7 @@ import { submitAddress } from "@/actions/address";
 const stateOptions = ["NSW", "VIC", "QLD", "WA", "SA", "TAS", "ACT", "NT"]; 
 
 export default function Home() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  //const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
 
   const [formData, setFormData] = useState<AddressFormType>({
@@ -47,7 +47,7 @@ export default function Home() {
             if (result.errors) setErrors(result.errors as AddressFormErrors);
             setMessage(result.message);
           }
-        } catch (error) {
+        } catch {
           setMessage("An unexpected error occurred");
         }
       });

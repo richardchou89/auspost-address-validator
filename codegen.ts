@@ -7,10 +7,6 @@ const config: CodegenConfig = {
       plugins: ["typescript", "typescript-resolvers"],
       config: {
         contextType: "./context#DataSourceContext",
-        mappers: {
-          Locality: "./models/locality",
-          Localities: "./models/localities",
-        },
       }
     },
   },
