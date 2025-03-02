@@ -75,9 +75,9 @@ REST endpoint: AusPost API.
 
 3. GraphQL server will call REST API through proxy (`LocalityAPI`)
 
-4. REST API returns localities, and the proxy converts localities to GraphQL.
+4. REST API returns response, and the proxy transforms response to GraphQL.
 
-5. GraphQL is returned to UI for display.
+5. Server component returns GraphQL to UI for display.
 
 # How search is done
 
@@ -141,3 +141,5 @@ npm run test
 ```
 
 ![image](https://github.com/user-attachments/assets/1b50fa05-bc52-43a9-8f45-f400356314ca)
+
+Due to intermittent failures of AusPost API, sometimes tests might fail. If given more time, this can be handled properly.
