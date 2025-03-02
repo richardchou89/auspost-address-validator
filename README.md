@@ -22,6 +22,14 @@ GraphQL server: is mounted on API routes by using `@as-integrations/next` packag
 
 Proxy: proxy class is created by extending `RESTDataSource` from `@apollo/datasource-rest` package.
 
+REST endpoint: AusPost API.
+
+# Workflow
+
+![image](https://github.com/user-attachments/assets/ee063a98-d89d-4455-8032-69462fe22d9e)
+
+
+
 # Design
 
 This project was styled by using Tailwindcss, and is responsive.
